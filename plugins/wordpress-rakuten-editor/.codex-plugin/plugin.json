@@ -1,0 +1,18 @@
+{
+  "name": "wordpress-rakuten-editor",
+  "version": "1.1.0",
+  "description": "既存のWordPress記事を仕上げる。サイト名と記事IDを言うだけで、楽天市場・ふるさと納税・トラベルのカード追加と旧リンク・旧カードの置換、商品名の50文字以内への要約、本人タグのAmazon併設、アイキャッチとH2挿絵の制作・設置、装飾・CTA・口コミの整えまでを、依頼ごとに取得した最新ルールどおりに実行し、バックアップと保存前後の確認つきで保存する。「仕上げて」「整えて」「実装して」「カードを入れて」「アイキャッチを作って」「挿絵を入れて」「記事IDを更新して」に対応。最大100サイトをサイト名で切り替える。新規記事の執筆や無関係なWordPress操作には使わない。",
+  "author": {
+    "name": "yamaokakenta"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "WordPress楽天記事編集",
+    "shortDescription": "最新ルールを毎回取得し、サイト名と記事IDだけでWordPress記事を仕上げる",
+    "longDescription": "サイト名と記事IDを伝えるだけで、既存のWordPress記事に楽天市場・ふるさと納税・トラベルのカードを追加し、旧リンクや旧カードを置き換え、アイキャッチとH2挿絵を制作・設置し、装飾とCTAを整えて保存します。編集ルールは依頼ごとに配布元から取得して固定するため、ルールが更新されても導入し直す必要はありません。",
+    "developerName": "yamaokakenta",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "サイトAの記事1422を仕上げて"
+  }
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "WordPress楽天記事編集"
+  short_description: "毎回最新版を取得し、SWELL記事と楽天カードを安全に更新"
+  default_prompt: "Use $wordpress-rakuten-editor to update the specified site and article using the latest rules."
+policy:
+  allow_implicit_invocation: true

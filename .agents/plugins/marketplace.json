@@ -1,0 +1,20 @@
+{
+  "name": "yamaken-blog",
+  "interface": {
+    "displayName": "やまけんブログ運用"
+  },
+  "plugins": [
+    {
+      "name": "wordpress-rakuten-editor",
+      "source": {
+        "source": "local",
+        "path": "./plugins/wordpress-rakuten-editor"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
