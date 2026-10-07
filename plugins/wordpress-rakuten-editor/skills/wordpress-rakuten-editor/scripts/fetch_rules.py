@@ -94,7 +94,13 @@ def read_url(url):
     except HTTPError as exc:
         raise FetchError('配布元のHTTPエラー: {}'.format(exc.code)) from None
     except (URLError, TimeoutError, OSError):
-        raise FetchError('配布元へ接続できません。ネットワークと利用権限を確認してください。') from None
+        # Agent sandboxes block outbound traffic by default, and the previous
+        # wording let that look like a broken distribution: the agent reported
+        # the failure instead of re-running the command with network access.
+        raise FetchError('配布元へ接続できません。この取得にはインターネット通信が必要です。'
+                         'エージェントで実行している場合は、ネットワークを許可して同じコマンドを'
+                         '実行し直してください。許可を求められたら利用者に承認を依頼してください。'
+                         ) from None
 
 
 def _safe_path(path, kind):
