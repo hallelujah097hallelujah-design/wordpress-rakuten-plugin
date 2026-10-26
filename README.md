@@ -35,6 +35,6 @@ codex plugin marketplace upgrade
 ```
 
 - 配布元: https://wordpress-rakuten-rules-8d8ab.hallelujah097hallelujah.workers.dev
-- 入口バージョン: 2.0.0
+- 入口バージョン: 2.1.0
 
 初期設定の手順と、WordPressアプリケーションパスワード・楽天ウェブサービス・Amazonアソシエイトの取得方法は配布元の案内を参照してください。
