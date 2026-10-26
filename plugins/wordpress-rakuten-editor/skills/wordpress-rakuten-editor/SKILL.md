@@ -96,10 +96,6 @@ python3 <snapshot_dir>/scripts/setup_sites.py --serve
 `{"site_name":…, "config":{…}}` を `--json-stdin` へ標準入力で渡す。
 この経路では入力した値が会話の記録に残ることを、聞く前に伝える。
 
-## SEO Fleetの同一実行IDで再開する場合
-
-Fleetヘルパーが `rules-lock.json` を検証して `handoff.json` に固定版を返した場合は、その版の `SKILL.md` と `references/fleet-integration.md` を使う。同一runを新規依頼として再取得しない。新しいrunは必ず最新を取得する。Fleetの実行IDが無い依頼では、この節は使わない。
-
 ## スキル自体の修正依頼
 
 編集ルールの正本は講師が管理する非公開リポジトリにあり、配布元のWorkerから配信される。この入口や手元の古い資料だけを直して全員に反映したと報告しない。正本を更新する権限が無い場合は提案までにし、配布元の場所や他人の認証情報を探さない。権限がある講師の依頼では、正本リポジトリの `AGENTS.md` と `README.md` に従い、修正・検証・バージョン更新・配信後の取得確認までを一つの変更として行う。

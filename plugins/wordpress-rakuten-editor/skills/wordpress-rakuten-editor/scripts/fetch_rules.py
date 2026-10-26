@@ -203,26 +203,19 @@ def fetch_rules(project_dir, transport=None):
     except Exception:
         shutil.rmtree(root, ignore_errors=True)
         raise
-    _prune_snapshots(project, parent, final)
+    _prune_snapshots(parent, final)
     return receipt
 
 
-def _prune_snapshots(project, parent, keep):
+def _prune_snapshots(parent, keep):
     """Drop snapshots nothing can still be using.
 
     A request already underway keeps reading the snapshot it fixed, so a newer
-    version must not delete it. Three things are kept: the snapshot just
-    written, any snapshot a Fleet rules-lock.json pins, and any snapshot
-    touched inside SNAPSHOT_GRACE_SECONDS. An unreadable lock prunes nothing at
-    all. Same-revision requests reuse one directory, so in steady state this
-    leaves exactly one.
+    version must not delete it: the snapshot just written and anything touched
+    inside SNAPSHOT_GRACE_SECONDS both stay. Same-revision requests reuse one
+    directory, so in steady state this leaves exactly one.
     """
     wanted = {keep.resolve()}
-    for lock in project.glob('jobs/*/*/*/rules-lock.json'):
-        try:
-            wanted.add(Path(json.loads(lock.read_text(encoding='utf-8'))['snapshot_dir']).resolve())
-        except Exception:
-            return
     fresh = time.time() - SNAPSHOT_GRACE_SECONDS
     for stale in parent.iterdir():
         if not stale.is_dir() or stale.is_symlink():
